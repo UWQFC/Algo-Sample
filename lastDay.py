@@ -60,9 +60,7 @@ class MarketMaker(BaseExchangeServerClient):
                      price = base_price-spread/2 if bid else base_price+spread/2,
                      competitor_identifier = self._comp_id)
     
-    '''Function to make a market order for a given asset. Base price is arbitrary,
-     although at one point we discovered an exploit which allowed us to force the sale of assets at a given price
-     through a market order. We contacted the development team to have this patched.'''
+    '''Function to make a market order for a given asset. Base price is arbitrary.'''
     def _make_order_mkt(self, asset_code, quantity, base_price, spread, bid=True):
         return Order(asset_code = asset_code, quantity=quantity if bid else -1*quantity,
                      order_type = Order.ORDER_MKT,
