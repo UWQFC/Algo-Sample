@@ -379,7 +379,7 @@ class MarketMaker(BaseExchangeServerClient):
                     else:
                         sitting[dictPosition]=0
 
-                    '''Enter positions. Not that we almost always make a decision to either buy or sell.
+                    '''Enter positions. Note that we almost always make a decision to either buy or sell.
                     Because we managed to achieve very high predictive power of a spreads movement, we were more concerned 
                     with being able to enter positions then we were about being picky about when to enter'''
                     if errorT < -0.00 and Exposure[dictPosition]<1000:
